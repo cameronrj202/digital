@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ticketek_dunedin_stepbystep</title>
+<link href="ticketek_dunedin_stepbystep.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+
+  <h1>Ticketek Dunedin</h1>
+  <!-- One "tab" for each step in the form: -->
+  <div class="tab">Please select the concert you wish to purchase tickets for
+	
+	<select id="concert_select">
+	  <option selected="selected" disabled="disabled" value="select">Select a concert</option>
+	  <option value="Teletubbies, 24th October 2020">Teletubbies, 24th October 2020</option>
+	  <option value="The Wiggles, 9th December 2020">The Wiggles, 9th December 2020</option>
+	  <option value="Minecraft sing-a-long, 1 January 2020">Minecraft sing-a-long, 1 January 2020</option>
+	  <option value="Despacito 2, 2nd May 2020">Despacito 2, 2nd May 2020</option>
+	  </select>
+	</div>
+	
+<div class="tab">Select your seats
+	<label>Number on tickets: <input id="ticket_quantity" class="contact_info" data-number="5" data-error="Sorry you can have a max of 5 tickets" type="number" min="1" max="5" value="1"><output id="5A"></output></label><br>
+	<label>Type the seat you would like: </label><br>
+	<button class="seat_type" data-price="69" type="button" value="Seated">Seated $69</button>
+	<button class="seat_type" data-price="23" type="button" value="Left Stand">Left Stand $23</button>
+	<button class="seat_type" data-price="56" type="button" value="Front Row">Front Row $56</button>
+	<button class="seat_type" data-price="140" type="button" value="Upfront">Upfornt $140</button>
+	<button class="seat_type" data-price="230" type="button" value="Premier Seated">Premier Seated $230</button>
+</div>
+	
+	
+<div class="tab">Ticket summary:
+	<label>Concert: <output id="concert"></output></label><br>
+	<label>Quantity: <output id="tickets"></output></label><br>
+	<label>Price per ticket: <output id="ticket_individual_price"></output></label><br><br>
+	
+	<label>Booking fee: $10</label><br>
+	<label>Total cost: <output id="total_cost"></output></label><br>
+</div>
+	
+<div class="tab">Your details:
+	<label>First name: <input id="first_name" placeholder="First name e.g John" type="text" data-error="Please enter only letters" data-number="1" class="contact_info" pattern="[A-Za-z]{2,20}"><output id="1A"></output></label><br>
+	<label>Last name: <input id="last_name" placeholder="last name e.g Doe" type="text" data-error="Please enter only letters" data-number="2" class="contact_info" pattern="[A-Za-z]{2,20}"><output id="2A"></output></label><br>
+	<label>Email address: <input id="email_address" placeholder="Email address e.g johndoe@gmail.com" type="email" data-error="Please enter a valid email" data-number="3" class="contact_info" pattern="[a-z0-9._%+-]+@[a-z0-9]+\.[a-z]{2,}$"><output id="3A"></output></label><br>
+	<label>Cellphone: <input id="cellphone" placeholder="Cellphone e.g 0212345678" type="tel" data-error="Please enter numbers only" data-number="4" class="contact_info" pattern="[0-9]{8,12}"><output id="4A"></output></label><br>
+	<button id="confirmbooking" onClick="pushData()">Confirm Booking</button>
+	
+<br>
+
+	
+	</div><br><br>
+	
+
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    </div>
+  </div>
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB3XnKudFYvDv-EJIPfJB-LzY29rB9AIgo",
+    authDomain: "ticketek-dunedin-2a721.firebaseapp.com",
+    databaseURL: "https://ticketek-dunedin-2a721.firebaseio.com",
+    projectId: "ticketek-dunedin-2a721",
+    storageBucket: "ticketek-dunedin-2a721.appspot.com",
+    messagingSenderId: "793389586260",
+    appId: "1:793389586260:web:e53dc65a7b29cf55505ac1"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+ <!-- Link to my external JavaScript file -->
+	<script src="ticketek_dunedin_stepbystep.css">
+	</script>
+	<script src="ticketek_dunedin_calculation.js">
+	</script>
+</body>
+</html>
