@@ -6,7 +6,7 @@ var ticketsRef = database.ref('tickets');//creates a referene point to firebase,
 
 function setBooking(){
 	ticket_amount = document.getElementById("ticket_quantity").value;
-	var BOOKING_FEE 10;
+	var BOOKING_FEE = 10;
 	if (ticket_amount < i || ticket_amount > 5) {
 		document.getElementById("5A").innerHTML = "Sorry you can't have less than 1 ticket or more than 5";
 	} else {
